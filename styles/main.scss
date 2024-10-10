@@ -1,16 +1,33 @@
+:root {
+	// Font Families
+	--ffSans: "Nimbus Sans L", sans-serif;
+	--ffMonospace: "Fragment Mono", monospace;
+
+	// Colours
+	--accent10: hsl(213, 100%, 10%);
+	--accent50: hsl(213, 100%, 46%);
+	--accent90: hsl(213, 100%, 90%);
+}
+
 *,
 *::after,
 *::before {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: var(--ffSans);
+}
+
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 section {
 	height: 100vh;
 	width: 100vw;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -18,18 +35,117 @@ section {
 header {
 	position: fixed;
 	width: 100vw;
-	background-color: black;
-	padding: 1rem;
+	// background-color: black;
+	padding: 2rem;
 }
 
-nav > ul{
-	display: flex;
+nav {
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		li {
+			list-style-type: none;
+			font-family: var(--ffMonospace);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: small;
+			a {
+				text-decoration: none;
+				font: inherit;
+				color: unset;
+			}
+		}
+	}
+}
+
+.landing {
 	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
+	justify-content: space-between;
+	padding-inline: 6rem;
+	.imageWrapper {
+		aspect-ratio: 1/1;
+		height: 80%;
+		background-color: black;
+	}
+	.title {
+		font-size: clamp(2rem, 5vmin, 5rem);
+	}
 }
 
-ul li {
-	list-style-type: none;
+.btn {
+	padding: 0.75rem 1.5rem;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	&--primary {
+		background-color: var(--accent50);
+		color: var(--accent90);
+		border: none;
+	}
+	&--outlined {
+		background: transparent;
+		border: 1px solid currentColor;
+	}
+}
+
+.buttonWrapper {
+	margin-top: 2rem;
+}
+
+.floating {
+	height: initial;
+	width: initial;
+	padding: 1rem;
+	// &#projects { }
+	.content {
+		background: black;
+		border-radius: 0.5rem;
+		padding: 1rem;
+		width: 100%;
+	}
+}
+
+.project {
+	padding: 1rem;
+	border: 1px solid currentColor;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	.tag {
+		font-size: clamp(0.5rem, 1.5vmin, 1rem);
+		font-family: var(--ffMonospace);
+		display: inline;
+		text-transform: uppercase;
+		padding: 0.5rem;
+		background-color: var(--accent10);
+		color: var(--accent90);
+		border-radius: 100rem;
+	}
+	.tagWrapper {
+		margin-bottom: 0.5rem;
+	}
+	.project__linkBtn {
+		width: 100%;
+		border: none;
+		margin-top: 1rem;
+		border-radius: 0.25rem;
+	}
+}
+
+.about {
+	align-items: start;
+	.text {
+		margin-inline: 3rem;
+		max-width: 90ch;
+	}
+}
+
+footer {
+	width: 100%;
+}
+.contactDetailWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 1rem;
 }
