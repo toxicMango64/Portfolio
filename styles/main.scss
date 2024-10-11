@@ -73,6 +73,11 @@ nav {
 	.title {
 		font-size: clamp(2rem, 5vmin, 5rem);
 	}
+	.handWave {
+		display: inline-block;
+		transform-origin: bottom right;
+		animation: wave 1s ease infinite;
+	}
 }
 
 .btn {
@@ -97,39 +102,60 @@ nav {
 .floating {
 	height: initial;
 	width: initial;
-	padding: 1rem;
+	padding: 2rem;
 	// &#projects { }
 	.content {
 		background: black;
 		border-radius: 0.5rem;
 		padding: 1rem;
 		width: 100%;
+		&__title {
+			margin-bottom: 1rem;
+		}
 	}
 }
 
-.project {
-	padding: 1rem;
-	border: 1px solid currentColor;
-	border-radius: 0.5rem;
-	cursor: pointer;
-	.tag {
-		font-size: clamp(0.5rem, 1.5vmin, 1rem);
-		font-family: var(--ffMonospace);
-		display: inline;
-		text-transform: uppercase;
-		padding: 0.5rem;
-		background-color: var(--accent10);
-		color: var(--accent90);
-		border-radius: 100rem;
-	}
-	.tagWrapper {
-		margin-bottom: 0.5rem;
-	}
-	.project__linkBtn {
-		width: 100%;
-		border: none;
-		margin-top: 1rem;
-		border-radius: 0.25rem;
+.projectsWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	font-family: var(--ffMonospace);
+	project-card {
+		padding: 1rem;
+		border: 1px solid currentColor;
+		border-radius: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		.tag {
+			font: inherit;
+			font-size: clamp(0.35rem, 1.2vmin, 0.75rem);
+			text-transform: uppercase;
+			padding: clamp(1px, 1vmin, 0.5rem) clamp(2px, 1.2vmin, 0.75rem);
+			background-color: var(--accent10);
+			color: var(--accent90);
+			border-radius: 100rem;
+		}
+		.tagWrapper {
+			margin-top: 0.25rem;
+			display: flex;
+			gap: 0.5rem;
+			font: inherit;
+		}
+		.project__title {
+			// font-family: var(--ffMonospace);
+			font-size: clamp(1rem, 2vmin, 2rem);
+		}
+		.project__desc {
+			font-size: clamp(0.75rem, 1.5vmin, 1.5rem);
+			margin-top: 1rem;
+			flex-grow: 1;
+		}
+		.project__linkBtn {
+			width: 100%;
+			border: none;
+			margin-top: 1rem;
+			border-radius: 0.25rem;
+		}
 	}
 }
 
@@ -144,8 +170,34 @@ nav {
 footer {
 	width: 100%;
 }
-.contactDetailWrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	margin-top: 1rem;
+.contact {
+	.content {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 2rem;
+	}
+	.contactDetailWrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: rotate(0deg);
+	}
+	15% {
+		transform: rotate(20deg);
+	}
+	35% {
+		transform: rotate(5deg);
+	}
+	75% {
+		transform: rotate(15deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }

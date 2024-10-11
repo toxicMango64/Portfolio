@@ -68,6 +68,11 @@ nav ul li a {
 .landing .title {
   font-size: clamp(2rem, 5vmin, 5rem);
 }
+.landing .handWave {
+  display: inline-block;
+  transform-origin: bottom right;
+  animation: wave 1s ease infinite;
+}
 
 .btn {
   padding: 0.75rem 1.5rem;
@@ -91,7 +96,7 @@ nav ul li a {
 .floating {
   height: initial;
   width: initial;
-  padding: 1rem;
+  padding: 2rem;
 }
 .floating .content {
   background: black;
@@ -99,27 +104,47 @@ nav ul li a {
   padding: 1rem;
   width: 100%;
 }
+.floating .content__title {
+  margin-bottom: 1rem;
+}
 
-.project {
+.projectsWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  font-family: var(--ffMonospace);
+}
+.projectsWrapper project-card {
   padding: 1rem;
   border: 1px solid currentColor;
   border-radius: 0.5rem;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
-.project .tag {
-  font-size: clamp(0.5rem, 1.5vmin, 1rem);
-  font-family: var(--ffMonospace);
-  display: inline;
+.projectsWrapper project-card .tag {
+  font: inherit;
+  font-size: clamp(0.35rem, 1.2vmin, 0.75rem);
   text-transform: uppercase;
-  padding: 0.5rem;
+  padding: clamp(1px, 1vmin, 0.5rem) clamp(2px, 1.2vmin, 0.75rem);
   background-color: var(--accent10);
   color: var(--accent90);
   border-radius: 100rem;
 }
-.project .tagWrapper {
-  margin-bottom: 0.5rem;
+.projectsWrapper project-card .tagWrapper {
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
+  font: inherit;
 }
-.project .project__linkBtn {
+.projectsWrapper project-card .project__title {
+  font-size: clamp(1rem, 2vmin, 2rem);
+}
+.projectsWrapper project-card .project__desc {
+  font-size: clamp(0.75rem, 1.5vmin, 1.5rem);
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+.projectsWrapper project-card .project__linkBtn {
   width: 100%;
   border: none;
   margin-top: 1rem;
@@ -138,8 +163,32 @@ footer {
   width: 100%;
 }
 
-.contactDetailWrapper {
+.contact .content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+.contact .contactDetailWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1rem;
+  gap: 1rem;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(20deg);
+  }
+  35% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }/*# sourceMappingURL=main.css.map */
