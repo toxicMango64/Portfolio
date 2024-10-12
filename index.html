@@ -11,16 +11,20 @@
 			href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 		<title>My Portfolio</title>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul>
-					<li><a href="#"> Home </a></li>
-					<li><a href="#projects"> Projects </a></li>
-					<li><a href="#about"> About </a></li>
-					<li><a href="#contact"> Contact </a></li>
+					<li class="overline"><a href="#"> Home </a></li>
+					<li class="overline"><a href="#projects"> Projects </a></li>
+					<li class="overline"><a href="#about"> About </a></li>
+					<li class="overline"><a href="#contact"> Contact </a></li>
 				</ul>
 			</nav>
 		</header>
@@ -35,6 +39,7 @@
 				<div class="buttonWrapper">
 					<button class="btn btn--primary projectsBtn">
 						My Projects
+						<span class="arrow">→</span>
 					</button>
 					<button class="btn btn--outlined aboutBtn">About Me</button>
 				</div>
@@ -49,62 +54,54 @@
 		</section>
 		<section id="about" class="about">
 			<div class="text">
-				<h1>About Me</h1>
-				<p>
+				<h1 class="about__title">About Me</h1>
+				<p class="about__para">
 					My name is Mohammed Yousaf and I am currently doing the
 					common core cursus at 42 Abu Dhabi. I really like coding but
 					also other things like problem solving and puzzle games and
 					some other stuff.
 				</p>
 			</div>
-		</section>
-		<section id="contact" class="contact floating">
-			<footer>
-				<div class="content">
-					<div class="text">
-						<h1 class="content__title">Contact Me</h1>
-						<p>
-							You can reach out to me using the method that's most
-							convenient for you, from the ones listed here.
+			<footer id="contact" class="contact">
+				<div class="text">
+					<h1 class="contact__title">Contact Me</h1>
+					<p class="contact__para">
+						You can reach out to me using the method that's most
+						convenient for you, from the ones listed here.
+					</p>
+				</div>
+				<div class="contactDetailWrapper">
+					<div class="contactMethod">
+						<p class="overline">E-Mail</p>
+						<p class="contactMethod__value">
+							uncle@student.52abudhabi.ae
 						</p>
 					</div>
-					<div class="contactDetailWrapper">
-						<div class="contact-method">
-							<p class="overline">E-Mail</p>
-							<p class="contact-method__value">
-								uncle@student.52abudhabi.ae
-							</p>
-						</div>
-						<div class="contact-method">
-							<p class="overline">Phone Number</p>
-							<p class="contact-method__value">
-								+971 50 123 1234
-							</p>
-						</div>
-						<div class="contact-method">
-							<p class="overline">GitHub</p>
-							<p class="contact-method__value">
-								Github.com/ToxicMango64
-							</p>
-						</div>
-						<div class="contact-method">
-							<p class="overline">E-Mail</p>
-							<p class="contact-method__value">
-								uncle@student.52abudhabi.ae
-							</p>
-						</div>
-						<div class="contact-method">
-							<p class="overline">Phone Number</p>
-							<p class="contact-method__value">
-								+971 50 123 1234
-							</p>
-						</div>
-						<div class="contact-method">
-							<p class="overline">GitHub</p>
-							<p class="contact-method__value">
-								Github.com/ToxicMango64
-							</p>
-						</div>
+					<div class="contactMethod">
+						<p class="overline">Phone Number</p>
+						<p class="contactMethod__value">+971 50 123 1234</p>
+					</div>
+					<div class="contactMethod">
+						<p class="overline">GitHub</p>
+						<p class="contactMethod__value">
+							Github.com/ToxicMango64
+						</p>
+					</div>
+					<div class="contactMethod">
+						<p class="overline">E-Mail</p>
+						<p class="contactMethod__value">
+							uncle@student.52abudhabi.ae
+						</p>
+					</div>
+					<div class="contactMethod">
+						<p class="overline">Phone Number</p>
+						<p class="contactMethod__value">+971 50 123 1234</p>
+					</div>
+					<div class="contactMethod">
+						<p class="overline">GitHub</p>
+						<p class="contactMethod__value">
+							Github.com/ToxicMango64
+						</p>
 					</div>
 				</div>
 			</footer>

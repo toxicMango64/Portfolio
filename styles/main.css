@@ -1,9 +1,6 @@
 :root {
-  --ffSans: "Nimbus Sans L", sans-serif;
+  --ffSans: "Hanken Grotesk", sans-serif;
   --ffMonospace: "Fragment Mono", monospace;
-  --accent10: hsl(213, 100%, 10%);
-  --accent50: hsl(213, 100%, 46%);
-  --accent90: hsl(213, 100%, 90%);
 }
 
 *,
@@ -18,6 +15,8 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: hsl(310, 5%, 7%);
+  color: hsl(310, 100%, 99%);
 }
 
 section {
@@ -27,11 +26,15 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 header {
   position: fixed;
   width: 100vw;
+  background-color: rgba(19, 17, 18, 0.2);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   padding: 2rem;
 }
 
@@ -44,26 +47,33 @@ nav ul {
 }
 nav ul li {
   list-style-type: none;
-  font-family: var(--ffMonospace);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: small;
 }
 nav ul li a {
   text-decoration: none;
   font: inherit;
   color: unset;
+  transition: color 150ms ease;
+}
+nav ul li a:hover {
+  color: hsl(220, 100%, 57%);
+}
+
+.overline {
+  font-family: var(--ffMonospace);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: small;
 }
 
 .landing {
   flex-direction: row;
-  justify-content: space-between;
-  padding-inline: 6rem;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 1rem;
+  padding: 6rem;
 }
-.landing .imageWrapper {
-  aspect-ratio: 1/1;
-  height: 80%;
-  background-color: black;
+.landing .content {
+  flex-grow: 1;
 }
 .landing .title {
   font-size: clamp(2rem, 5vmin, 5rem);
@@ -73,20 +83,53 @@ nav ul li a {
   transform-origin: bottom right;
   animation: wave 1s ease infinite;
 }
+.landing .subtitle {
+  font-size: clamp(1rem, 2vmin, 2rem);
+}
+.landing .projectsBtn .arrow {
+  display: inline-block;
+  transition: transform 250ms ease;
+}
+.landing .projectsBtn:hover .arrow {
+  transform: translateX(5px);
+}
+.landing .imageWrapper {
+  aspect-ratio: 1/1;
+  flex-grow: 1;
+  min-width: 256px;
+  background-color: black;
+}
 
 .btn {
   padding: 0.75rem 1.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 1.75vmin, 1.25rem);
+  background-color: hsl(310, 4%, 40%);
+  transition: 250ms ease;
+  transition-property: background-color, color;
+}
+.btn:hover {
+  background-color: hsl(310, 6%, 60%);
+  color: hsl(310, 5%, 7%);
 }
 .btn--primary {
-  background-color: var(--accent50);
-  color: var(--accent90);
+  background-color: hsl(220, 100%, 46%);
+  color: hsl(220, 100%, 90%);
   border: none;
+}
+.btn--primary:hover {
+  background-color: hsl(220, 100%, 40%);
+  color: hsl(220, 100%, 90%);
 }
 .btn--outlined {
   background: transparent;
-  border: 1px solid currentColor;
+  border: 1px solid hsl(310, 2%, 12%);
+}
+.btn--outlined:hover {
+  background-color: hsl(310, 2%, 12%);
+  color: hsl(310, 100%, 99%);
 }
 
 .buttonWrapper {
@@ -99,7 +142,7 @@ nav ul li a {
   padding: 2rem;
 }
 .floating .content {
-  background: black;
+  background: hsl(310, 2%, 12%);
   border-radius: 0.5rem;
   padding: 1rem;
   width: 100%;
@@ -109,32 +152,34 @@ nav ul li a {
 }
 
 .projectsWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  font-family: var(--ffMonospace);
 }
 .projectsWrapper project-card {
+  font-family: var(--ffMonospace);
   padding: 1rem;
   border: 1px solid currentColor;
   border-radius: 0.5rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.projectsWrapper project-card .tag {
+.projectsWrapper project-card * {
   font: inherit;
+}
+.projectsWrapper project-card .tag {
   font-size: clamp(0.35rem, 1.2vmin, 0.75rem);
   text-transform: uppercase;
   padding: clamp(1px, 1vmin, 0.5rem) clamp(2px, 1.2vmin, 0.75rem);
-  background-color: var(--accent10);
-  color: var(--accent90);
+  background-color: hsl(220, 100%, 10%);
+  color: hsl(220, 100%, 90%);
   border-radius: 100rem;
 }
 .projectsWrapper project-card .tagWrapper {
   margin-top: 0.25rem;
   display: flex;
   gap: 0.5rem;
-  font: inherit;
 }
 .projectsWrapper project-card .project__title {
   font-size: clamp(1rem, 2vmin, 2rem);
@@ -154,25 +199,41 @@ nav ul li a {
 .about {
   align-items: start;
 }
-.about .text {
+.about > .text {
   margin-inline: 3rem;
   max-width: 90ch;
+  flex-grow: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-footer {
-  width: 100%;
+.about__para {
+  font-family: var(--ffMonospace);
 }
-
-.contact .content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-}
-.contact .contactDetailWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 1rem;
+.about .contact {
+  background-color: hsl(310, 2%, 12%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
+}
+.about .contact__para {
+  font-family: var(--ffMonospace);
+}
+.about .contact .contactDetailWrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.about .contact .contactDetailWrapper .contactMethod {
+  flex-grow: 1;
+  min-width: 15rem;
+}
+.about .contact .contactDetailWrapper .contactMethod__value {
+  font-family: var(--ffMonospace);
 }
 
 @keyframes wave {
