@@ -107,6 +107,7 @@ nav ul li a:hover {
   font-weight: 500;
   font-size: clamp(0.75rem, 1.75vmin, 1.25rem);
   background-color: hsl(310, 4%, 40%);
+  color: hsl(310, 100%, 99%);
   transition: 250ms ease;
   transition-property: background-color, color;
 }

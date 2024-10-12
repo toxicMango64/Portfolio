@@ -130,6 +130,7 @@ nav {
 	font-weight: 500;
 	font-size: clamp(0.75rem, 1.75vmin, 1.25rem);
 	background-color: $neutral40;
+	color: $neutral99;
 	transition: 250ms ease;
 	transition-property: background-color, color;
 	&:hover {
