@@ -13,7 +13,12 @@ const otherTitlesEl = document.querySelector(".otherTitles");
 // Display a new title every duration milliseconds
 const TITLE_DURATION = 2000;
 setInterval(() => {
-	otherTitlesEl.innerText = OTHER_TITLES[getRandomInt(OTHER_TITLES.length)];
+	otherTitlesEl.style.transform = "translateY(25px) rotateZ(5deg)";
+	setTimeout(() => {
+		otherTitlesEl.innerText =
+			OTHER_TITLES[getRandomInt(OTHER_TITLES.length)];
+		otherTitlesEl.style.transform = "initial";
+	}, 250);
 }, TITLE_DURATION);
 
 // Handle landing page button clicks

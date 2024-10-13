@@ -86,6 +86,12 @@ nav ul li a:hover {
 }
 .landing .subtitle {
   font-size: clamp(1rem, 2vmin, 2rem);
+  overflow-y: hidden;
+}
+.landing .subtitle .otherTitles {
+  display: inline-block;
+  transition: 250ms ease;
+  transition-property: transform, opacity;
 }
 .landing .projectsBtn .arrow {
   display: inline-block;

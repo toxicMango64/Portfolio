@@ -104,6 +104,13 @@ nav {
 	}
 	.subtitle {
 		font-size: clamp(1rem, 2vmin, 2rem);
+		overflow-y: hidden;
+		// transform-origin: top left;
+		.otherTitles {
+			display: inline-block;
+			transition: 250ms ease;
+			transition-property: transform, opacity;
+		}
 	}
 	.projectsBtn {
 		.arrow {
