@@ -1,5 +1,5 @@
 // CHANGE THESE TO CHANGE THEME
-$HUE_MAIN: 220;
+$HUE_MAIN: 80;
 $HUE_COMPLIMENTARY: calc($HUE_MAIN + 90);
 
 $neutral10: hsl($HUE_COMPLIMENTARY, 5%, 7%);
@@ -11,7 +11,7 @@ $neutral100: hsl($HUE_COMPLIMENTARY, 100%, 100%);
 
 $accent10: hsl($HUE_MAIN, 100%, 10%);
 $accent40: hsl($HUE_MAIN, 100%, 40%);
-$accent50: hsl($HUE_MAIN, 100%, 46%);
+$accent50: hsl($HUE_MAIN, 80%, 46%);
 $accent60: hsl($HUE_MAIN, 100%, 57%);
 $accent90: hsl($HUE_MAIN, 100%, 90%);
 
@@ -35,6 +35,10 @@ html {
 	scroll-behavior: smooth;
 	background-color: $neutral10;
 	color: $neutral99;
+}
+
+::selection {
+	background-color: $accent50;
 }
 
 section {
@@ -126,8 +130,15 @@ nav {
 	.imageWrapper {
 		aspect-ratio: 1/1;
 		flex-grow: 1;
-		min-width: 256px;
-		background-color: black;
+		min-width: 128px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			height: 80%;
+			vertical-align: middle;
+			text-align: center;
+		}
 	}
 }
 
