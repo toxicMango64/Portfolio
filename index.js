@@ -8,7 +8,7 @@ const OTHER_TITLES = [
 	"a proud Pakistani",
 	"a software developer",
 	"an embedded systems enthusiast",
-	"a game developer",
+	"in your house...",
 ];
 const otherTitlesEl = document.querySelector(".otherTitles");
 
