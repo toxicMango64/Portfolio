@@ -1,0 +1,11 @@
+@use "common.scss";
+
+.projects {
+	align-items: start;
+	.title {
+		margin-bottom: 0.5rem;
+	}
+	.para {
+		margin-bottom: 2rem;
+	}
+}

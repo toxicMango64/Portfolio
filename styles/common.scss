@@ -1,0 +1,176 @@
+@use "sass:math";
+
+// CHANGE THESE TO CHANGE THEME
+$HUE_MAIN: 70;
+$HUE_COMPLIMENTARY: calc($HUE_MAIN + 90);
+
+/**
+ * Get the colour with the provided type and value parameters.
+ *
+ * type is the type of colour you want to retrieve. Possible values are 
+ * ["accent", "neutral"]
+ *
+ * value is the tone of the colour you want to retrieve. Values range from
+ * 0 - 100 with 0 being black and 100 being white.
+ */
+@function getColour($type, $value, $saturation: 0%) {
+	$sat: $saturation * 1%;
+	@if ($saturation == 0%) {
+		$sat: math.div($value, 100) * math.div($value, 100) * 100%;
+	}
+	$light: $value * 1%;
+	@if ($type == "accent") {
+		@return hsl($HUE_MAIN, $sat, $light);
+	}
+	@return hsl($HUE_COMPLIMENTARY, $sat, $light);
+}
+
+:root {
+	// Font Families
+	--ffSans: "Hanken Grotesk", sans-serif;
+	--ffMonospace: "Fragment Mono", monospace;
+}
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: var(--ffSans);
+}
+
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	background-color: getColour("neutral", 10);
+	color: getColour("accent", 90);
+}
+
+::selection {
+	background-color: getColour("accent", 50);
+}
+
+section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+header {
+	position: fixed;
+	width: 100vw;
+	background-color: transparentize(
+		$color: getColour("neutral", 10),
+		$amount: 0.8
+	);
+	backdrop-filter: blur(0.5rem);
+	padding: 2rem;
+}
+
+nav {
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		li {
+			list-style-type: none;
+			a {
+				text-decoration: none;
+				font: inherit;
+				color: unset;
+				transition: color 150ms ease;
+				&:hover {
+					color: getColour("accent", 60);
+				}
+			}
+		}
+	}
+}
+
+.overline {
+	font-family: var(--ffMonospace);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: small;
+}
+
+.btn {
+	padding: 0.75rem 1.5rem;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	font-weight: 500;
+	font-size: clamp(0.75rem, 1.75vmin, 1.25rem);
+	background-color: getColour("neutral", 80);
+	color: getColour("neutral", 20);
+	transition: 250ms ease;
+	transition-property: background-color, color;
+	&:hover {
+		background-color: getColour("neutral", 60);
+		color: getColour("neutral", 90);
+	}
+	&--primary {
+		background-color: getColour("accent", 50);
+		color: getColour("accent", 90);
+		border: none;
+		&:hover {
+			background-color: getColour("accent", 60);
+			color: getColour("accent", 90);
+		}
+	}
+	&--outlined {
+		background: transparent;
+		border: 1px solid getColour("neutral", 20);
+		color: getColour("neutral", 90);
+		&:hover {
+			background-color: getColour("neutral", 20);
+			color: getColour("neutral", 99);
+		}
+	}
+}
+
+project-card {
+	font-family: var(--ffMonospace);
+	padding: 1rem;
+	border: 1px solid currentColor;
+	border-radius: 0.5rem;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	* {
+		font: inherit;
+	}
+	.tag {
+		font-size: clamp(0.35rem, 1.2vmin, 0.75rem);
+		text-transform: uppercase;
+		padding: clamp(1px, 1vmin, 0.5rem) clamp(2px, 1.2vmin, 0.75rem);
+		background-color: getColour("accent", 10, 100);
+		color: getColour("accent", 90);
+		border-radius: 100rem;
+	}
+	.tagWrapper {
+		margin-top: 0.25rem;
+		display: flex;
+		gap: 0.5rem;
+	}
+	.project__title {
+		font-size: clamp(1rem, 2vmin, 2rem);
+	}
+	.project__desc {
+		font-size: clamp(0.75rem, 1.5vmin, 1.5rem);
+		margin-top: 1rem;
+		flex-grow: 1;
+		max-width: 70ch;
+	}
+	.project__linkBtn {
+		width: 100%;
+		border: none;
+		margin-top: 1rem;
+		border-radius: 0.25rem;
+	}
+}
