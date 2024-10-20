@@ -1,7 +1,3 @@
-function getRandomInt(max) {
-	return Math.floor(Math.random() * max);
-}
-
 function displayElements(targetEl) {
 	const fadeEls = targetEl.querySelectorAll(".fade");
 	const unhide = (i) => {
@@ -20,4 +16,4 @@ const USER = "toxicMango64";
 let response = await fetch(`https://api.github.com/users/${USER}/repos`);
 let responseParsed = await response.json();
 
-export { getRandomInt, displayElements, responseParsed };
+export { displayElements, responseParsed };

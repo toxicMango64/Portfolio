@@ -1,5 +1,13 @@
 import { ProjectCard } from "./ProjectCard.js";
-import { responseParsed, displayElements, getRandomInt } from "./utils.js";
+// import { Nav } from "./nav.js";
+import { responseParsed, displayElements } from "./utils.js";
+
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+}
+
+// const nav = new Nav();
+// nav.injectTo(document.body);
 
 const OTHER_TITLES = [
 	"a 42 student",
