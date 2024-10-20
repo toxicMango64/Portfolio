@@ -135,5 +135,5 @@ observedPages.forEach((page) => {
 
 const viewMoreProjectsBtn = document.querySelector(".projects__viewMoreBtn");
 viewMoreProjectsBtn.onclick = () => {
-	window.location.assign("/projects", "_self");
+	window.location.assign(window.location.pathname + "projects");
 };
