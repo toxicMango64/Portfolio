@@ -1,3 +1,12 @@
+/**
+ * Get the colour with the provided type and value parameters.
+ *
+ * type is the type of colour you want to retrieve. Possible values are 
+ * ["accent", "neutral"]
+ *
+ * value is the tone of the colour you want to retrieve. Values range from
+ * 0 - 100 with 0 being black and 100 being white.
+ */
 :root {
   --ffSans: "Hanken Grotesk", sans-serif;
   --ffMonospace: "Fragment Mono", monospace;
@@ -15,16 +24,16 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: hsl(170, 5%, 7%);
-  color: hsl(170, 100%, 99%);
+  background-color: hsl(160, 1%, 10%);
+  color: hsl(70, 81%, 90%);
 }
 
 ::-moz-selection {
-  background-color: hsl(80, 80%, 46%);
+  background-color: hsl(70, 25%, 50%);
 }
 
 ::selection {
-  background-color: hsl(80, 80%, 46%);
+  background-color: hsl(70, 25%, 50%);
 }
 
 section {
@@ -40,7 +49,7 @@ section {
 header {
   position: fixed;
   width: 100vw;
-  background-color: rgba(17, 19, 18, 0.2);
+  background-color: rgba(25, 26, 26, 0.2);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   padding: 2rem;
@@ -63,7 +72,7 @@ nav ul li a {
   transition: color 150ms ease;
 }
 nav ul li a:hover {
-  color: hsl(80, 100%, 57%);
+  color: hsl(70, 36%, 60%);
 }
 
 .overline {
@@ -133,31 +142,32 @@ nav ul li a:hover {
   border-radius: 0.5rem;
   font-weight: 500;
   font-size: clamp(0.75rem, 1.75vmin, 1.25rem);
-  background-color: hsl(170, 4%, 40%);
-  color: hsl(170, 100%, 99%);
+  background-color: hsl(160, 64%, 80%);
+  color: hsl(160, 4%, 20%);
   transition: 250ms ease;
   transition-property: background-color, color;
 }
 .btn:hover {
-  background-color: hsl(170, 6%, 60%);
-  color: hsl(170, 5%, 7%);
+  background-color: hsl(160, 36%, 60%);
+  color: hsl(160, 81%, 90%);
 }
 .btn--primary {
-  background-color: hsl(80, 80%, 46%);
-  color: hsl(80, 100%, 90%);
+  background-color: hsl(70, 25%, 50%);
+  color: hsl(70, 81%, 90%);
   border: none;
 }
 .btn--primary:hover {
-  background-color: hsl(80, 100%, 40%);
-  color: hsl(80, 100%, 90%);
+  background-color: hsl(70, 36%, 60%);
+  color: hsl(70, 81%, 90%);
 }
 .btn--outlined {
   background: transparent;
-  border: 1px solid hsl(170, 2%, 12%);
+  border: 1px solid hsl(160, 4%, 20%);
+  color: hsl(160, 81%, 90%);
 }
 .btn--outlined:hover {
-  background-color: hsl(170, 2%, 12%);
-  color: hsl(170, 100%, 99%);
+  background-color: hsl(160, 4%, 20%);
+  color: hsl(160, 98.01%, 99%);
 }
 
 .buttonWrapper {
@@ -170,7 +180,7 @@ nav ul li a:hover {
   padding: 2rem;
 }
 .floating .content {
-  background: hsl(170, 2%, 12%);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
   padding: 1rem;
   width: 100%;
@@ -197,8 +207,8 @@ nav ul li a:hover {
   font-size: clamp(0.35rem, 1.2vmin, 0.75rem);
   text-transform: uppercase;
   padding: clamp(1px, 1vmin, 0.5rem) clamp(2px, 1.2vmin, 0.75rem);
-  background-color: hsl(80, 100%, 10%);
-  color: hsl(80, 100%, 90%);
+  background-color: hsl(70, 100%, 10%);
+  color: hsl(70, 81%, 90%);
   border-radius: 100rem;
 }
 .projectsWrapper project-card .tagWrapper {
@@ -224,19 +234,37 @@ nav ul li a:hover {
 .about {
   align-items: start;
 }
-.about > .text {
+.about > .content {
+  width: calc(100% - 6rem);
   margin-inline: 3rem;
-  max-width: 90ch;
   flex-grow: 8;
+  flex-wrap: wrap-reverse;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.about > .content .text {
+  flex-grow: 1;
 }
 .about__para {
+  max-width: 90ch;
   font-family: var(--ffMonospace);
 }
+.about .cvWrapper {
+  background-color: red;
+  flex-grow: 1;
+  height: 60%;
+}
+.about .cvWrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+.about .cvWrapper button {
+  display: block;
+  width: 100%;
+}
 .about .contact {
-  background-color: hsl(170, 2%, 12%);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
   padding: 1rem;
   flex-grow: 1;

@@ -73,6 +73,7 @@ class ProjectCard extends HTMLElement {
 
 		this.linkBtn = document.createElement("button");
 		this.linkBtn.classList.add("btn");
+		this.linkBtn.classList.add("btn--primary");
 		this.linkBtn.classList.add("project__linkBtn");
 		this.linkBtn.innerText = "Visit GitHub";
 		this.linkBtn.onclick = () => {
@@ -112,7 +113,6 @@ const observerOptions = {
 };
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
-		console.log(entry);
 		if (entry.isIntersecting) {
 			displayElements(entry.target);
 		}
