@@ -38,7 +38,6 @@ html {
 
 section {
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,6 +185,12 @@ nav ul li a:hover {
   width: 100%;
 }
 
+.projects__viewMoreBtn {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: hsl(160, 9%, 30%);
+}
+
 .projectsWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -223,6 +228,7 @@ nav ul li a:hover {
   font-size: clamp(0.75rem, 1.5vmin, 1.5rem);
   margin-top: 1rem;
   flex-grow: 1;
+  max-width: 70ch;
 }
 .projectsWrapper project-card .project__linkBtn {
   width: 100%;
@@ -232,58 +238,41 @@ nav ul li a:hover {
 }
 
 .about {
-  align-items: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
 }
-.about > .content {
-  width: calc(100% - 6rem);
-  margin-inline: 3rem;
-  flex-grow: 8;
-  flex-wrap: wrap-reverse;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.about > .content .text {
+.about .text {
   flex-grow: 1;
 }
 .about__para {
-  max-width: 90ch;
   font-family: var(--ffMonospace);
+  max-width: 70ch;
 }
-.about .cvWrapper {
-  background-color: red;
-  flex-grow: 1;
-  height: 60%;
-}
-.about .cvWrapper iframe {
-  width: 100%;
-  height: 100%;
-}
-.about .cvWrapper button {
-  display: block;
-  width: 100%;
+.about__downloadBtn {
+  margin-top: 2rem;
 }
 .about .contact {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
-  padding: 1rem;
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
 }
 .about .contact__para {
   font-family: var(--ffMonospace);
+  max-width: 70ch;
 }
 .about .contact .contactDetailWrapper {
-  display: flex;
+  display: grid;
   flex-grow: 1;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(2, max-content);
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 1rem;
 }
 .about .contact .contactDetailWrapper .contactMethod {
   flex-grow: 1;
-  min-width: 15rem;
 }
 .about .contact .contactDetailWrapper .contactMethod__value {
   font-family: var(--ffMonospace);
@@ -293,7 +282,7 @@ nav ul li a:hover {
   opacity: 0;
   transform: translate(0px, -10px);
   transition: 750ms cubic-bezier(0.1, 0.75, 0.57, 1);
-  transition-property: opacity, transform;
+  transition-property: background-color, color, opacity, transform;
 }
 
 @keyframes wave {

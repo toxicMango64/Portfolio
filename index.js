@@ -84,15 +84,19 @@ class ProjectCard extends HTMLElement {
 }
 customElements.define("project-card", ProjectCard);
 
+const HIGHLIGHTED_REPO_NAMES = ["wipe", "minitalk", "minishell", "cub3D"];
+
 // Loop through each repository that was found and create a project card for it and add it to the website
 responseParsed.forEach((repo) => {
-	let card = new ProjectCard(
-		repo.name,
-		repo.description,
-		repo.topics,
-		repo.clone_url
-	);
-	projectsWrapper.append(card);
+	if (HIGHLIGHTED_REPO_NAMES.includes(repo.name)) {
+		let card = new ProjectCard(
+			repo.name,
+			repo.description,
+			repo.topics,
+			repo.clone_url
+		);
+		projectsWrapper.append(card);
+	}
 });
 
 function displayElements(targetEl) {
@@ -122,10 +126,14 @@ const observer = new IntersectionObserver((entries) => {
 const landingPage = document.querySelector(".landing");
 const projectsPage = document.querySelector(".projects");
 const navBar = document.querySelector("nav");
-const aboutPage = document.querySelector(".about .text");
-const footer = document.querySelector("footer");
-const observedPages = [landingPage, projectsPage, navBar, aboutPage, footer];
+const aboutPage = document.querySelector(".about");
+const observedPages = [landingPage, projectsPage, navBar, aboutPage];
 
 observedPages.forEach((page) => {
 	observer.observe(page);
 });
+
+const viewMoreProjectsBtn = document.querySelector(".projects__viewMoreBtn");
+viewMoreProjectsBtn.onclick = () => {
+	window.location.assign("/projects", "_self");
+};
