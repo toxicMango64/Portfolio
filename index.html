@@ -1,3 +1,39 @@
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-color: #333;
+        padding: 10px 20px;
+    }
+
+    .navbar {
+        list-style-type: none;
+        display: flex;
+        justify-content: center; /* Center the items */
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin: 0 10px; /* Adjust the margin between items */
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-item a:hover {
+        background-color: #555;
+        border-radius: 5px;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,12 +61,11 @@
 	<body>
 		<header>
 			<nav>
-				<ul>
-					<li class="overline fade"><a href="#"> Home </a></li>
-					<li class="overline fade">
-						<a href="#projects"> Projects </a>
-					</li>
-					<li class="overline fade"><a href="#about"> About </a></li>
+				<ul class="navbar">
+					<li class="nav-item"><a href="#">Home</a></li>
+					<li class="nav-item"><a href="#projects">Projects</a></li>
+					<li class="nav-item"><a href="#about">About</a></li>
+					<li class="nav-item"><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
