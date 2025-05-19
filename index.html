@@ -1,171 +1,157 @@
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
 
-    header {
-        background-color: #333;
-        padding: 10px 20px;
-    }
+  header {
+    background-color: #333;
+    padding: 10px 20px;
+  }
 
-    .navbar {
-        list-style-type: none;
-        display: flex;
-        justify-content: center; /* Center the items */
-        margin: 0;
-        padding: 0;
-    }
+  .navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center the items */
+    margin: 0;
+    padding: 0;
+  }
 
-    .nav-item {
-        margin: 0 10px; /* Adjust the margin between items */
-    }
+  .nav-item {
+    margin: 0 10px; /* Adjust the margin between items */
+  }
 
-    .nav-item a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 15px;
-        transition: background-color 0.3s;
-    }
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+  }
 
-    .nav-item a:hover {
-        background-color: #555;
-        border-radius: 5px;
-    }
+  .nav-item a:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
 </style>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <meta name="color-scheme" content="dark light" /> -->
-		<link
-			rel="shortcut icon"
-			href="./assets/favicon.ico"
-			type="image/x-icon"
-		/>
-		<link rel="stylesheet" href="styles/main.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<title>My Portfolio</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul class="navbar">
-					<li class="nav-item"><a href="#">Home</a></li>
-					<li class="nav-item"><a href="#projects">Projects</a></li>
-					<li class="nav-item"><a href="#about">About</a></li>
-					<li class="nav-item"><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section class="landing">
-			<div class="content">
-				<h1 class="title fade">
-					Hi, I'm Yousaf <span class="handWave">👋</span>
-				</h1>
-				<p class="subtitle fade">
-					But I'm also <span class="otherTitles">a 42 student</span>
-				</p>
-				<div class="buttonWrapper fade">
-					<button class="btn btn--primary projectsBtn">
-						My Projects
-						<span class="arrow">→</span>
-					</button>
-					<button class="btn btn--outlined aboutBtn">About Me</button>
-				</div>
-			</div>
-			<div class="imageWrapper fade">
-				<img
-					src="./assets/rotating_globe_updated.gif"
-					alt="GIF of a rotating globe written created with text."
-				/>
-			</div>
-		</section>
-		<section id="projects" class="projects floating">
-			<div class="content">
-				<h1 class="projects__title title fade">My Projects</h1>
-				<div class="projectsWrapper"></div>
-				<button class="btn btn--outlined projects__viewMoreBtn fade">
-					View More
-				</button>
-			</div>
-		</section>
-		<section id="about" class="about">
-			<div class="text">
-				<h1 class="about__title title fade">About Me</h1>
-				<p class="about__para fade">
-					My name is Mohammed Yousaf and I am currently doing the
-					common core cursus at 42 Abu Dhabi. Aspiring cybersecurity
-					intern with a passion for secure coding, system
-					administration and aiming to specialize in low-level
-					exploitation and analysis. Proven experience in setting up
-					secure environments (virtualization), analyzing
-					vulnerabilities, and administering Linux-based servers.
-					Seeking to contribute technical skills in a dynamic
-					cybersecurity role while continuing to learn and grow in the
-					field..
-				</p>
-				<a href="./assets/CV.pdf" download="./assets/CV.pdf">
-					<button class="fade btn btn--primary about__downloadBtn">
-						Download my CV
-					</button>
-				</a>
-			</div>
-			<div id="contact" class="contact">
-				<div class="text">
-					<h1 class="contact__title title fade">Contact Me</h1>
-					<p class="contact__para fade">
-						You can reach out to me using the method that's most
-						convenient for you, from the ones listed here.
-					</p>
-				</div>
-				<div class="contactDetailWrapper">
-					<div class="contactMethod fade">
-						<p class="overline">E-Mail</p>
-						<p class="contactMethod__value">
-							uncle@student.52abudhabi.ae
-						</p>
-					</div>
-					<div class="contactMethod fade">
-						<p class="overline">Phone Number</p>
-						<p class="contactMethod__value">+971 50 123 1234</p>
-					</div>
-					<div class="contactMethod fade">
-						<p class="overline">GitHub</p>
-						<p class="contactMethod__value">
-							Github.com/ToxicMango64
-						</p>
-					</div>
-					<div class="contactMethod fade">
-						<p class="overline">E-Mail</p>
-						<p class="contactMethod__value">
-							uncle@student.52abudhabi.ae
-						</p>
-					</div>
-					<div class="contactMethod fade">
-						<p class="overline">Phone Number</p>
-						<p class="contactMethod__value">+971 50 123 1234</p>
-					</div>
-					<div class="contactMethod fade">
-						<p class="overline">GitHub</p>
-						<p class="contactMethod__value">
-							Github.com/ToxicMango64
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-	</body>
-	<script src="./scripts/index.js" type="module"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="color-scheme" content="dark light" /> -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#projects">Projects</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="landing">
+      <div class="content">
+        <h1 class="title fade">
+          Hi, I'm Yousaf <span class="handWave">👋</span>
+        </h1>
+        <p class="subtitle fade">
+          But I'm also <span class="otherTitles">a 42 student</span>
+        </p>
+        <div class="buttonWrapper fade">
+          <button class="btn btn--primary projectsBtn">
+            My Projects
+            <span class="arrow">→</span>
+          </button>
+          <button class="btn btn--outlined aboutBtn">About Me</button>
+        </div>
+      </div>
+      <div class="imageWrapper fade">
+        <img
+          src="./assets/rotating_globe_updated.gif"
+          alt="GIF of a rotating globe written created with text."
+        />
+      </div>
+    </section>
+    <section id="projects" class="projects floating">
+      <div class="content">
+        <h1 class="projects__title title fade">My Projects</h1>
+        <div class="projectsWrapper"></div>
+        <button class="btn btn--outlined projects__viewMoreBtn fade">
+          View More
+        </button>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="text">
+        <h1 class="about__title title fade">About Me</h1>
+        <p class="about__para fade">
+          My name is Mohammed Yousaf and I am currently doing the common core
+          cursus at 42 Abu Dhabi. Aspiring cybersecurity intern with a passion
+          for secure coding, system administration and aiming to specialize in
+          low-level exploitation and analysis. Proven experience in setting up
+          secure environments (virtualization), analyzing vulnerabilities, and
+          administering Linux-based servers. Seeking to contribute technical
+          skills in a dynamic cybersecurity role while continuing to learn and
+          grow in the field..
+        </p>
+        <a href="./assets/CV.pdf" download="./assets/CV.pdf">
+          <button class="fade btn btn--primary about__downloadBtn">
+            Download my CV
+          </button>
+        </a>
+      </div>
+      <div id="contact" class="contact">
+        <div class="text">
+          <h1 class="contact__title title fade">Contact Me</h1>
+          <p class="contact__para fade">
+            You can reach out to me using the method that's most convenient for
+            you, from the ones listed here.
+          </p>
+        </div>
+        <div class="contactDetailWrapper">
+          <div class="contactMethod fade">
+            <p class="overline">E-Mail</p>
+            <p class="contactMethod__value">uncle@student.52abudhabi.ae</p>
+          </div>
+          <div class="contactMethod fade">
+            <p class="overline">Phone Number</p>
+            <p class="contactMethod__value">+971 50 123 1234</p>
+          </div>
+          <div class="contactMethod fade">
+            <p class="overline">GitHub</p>
+            <p class="contactMethod__value">Github.com/ToxicMango64</p>
+          </div>
+          <div class="contactMethod fade">
+            <p class="overline">E-Mail</p>
+            <p class="contactMethod__value">uncle@student.52abudhabi.ae</p>
+          </div>
+          <div class="contactMethod fade">
+            <p class="overline">Phone Number</p>
+            <p class="contactMethod__value">+971 50 123 1234</p>
+          </div>
+          <div class="contactMethod fade">
+            <p class="overline">GitHub</p>
+            <p class="contactMethod__value">Github.com/ToxicMango64</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./scripts/index.js" type="module"></script>
 </html>
