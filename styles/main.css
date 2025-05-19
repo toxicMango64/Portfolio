@@ -50,7 +50,7 @@ header {
   width: 100vw;
   background-color: rgba(25, 26, 26, 0.2);
   -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   padding: 2rem;
 }
 
@@ -302,4 +302,4 @@ project-card .project__linkBtn {
   100% {
     transform: rotate(0deg);
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
