@@ -10,13 +10,13 @@ displayElements(document.querySelector("header"));
 const projectsWrapper = document.querySelector(".projectsWrapper");
 const projectsSection = document.querySelector(".projects");
 userRepostories.forEach((repo) => {
-	let card = new ProjectCard(
-		repo.name,
-		repo.description,
-		repo.topics,
-		repo.clone_url
-	);
-	projectsWrapper.append(card);
+  let card = new ProjectCard(
+    repo.name,
+    repo.description,
+    repo.topics,
+    repo.clone_url,
+  );
+  projectsWrapper.append(card);
 });
 
 displayElements(projectsWrapper);
